@@ -16,7 +16,7 @@ def target_array(idx):
     target[idx]=1
     return target
 network=NeuralNetwork()
-learning_rate=0.003
+learning_rate=0.01
 epochs=15
 for i in range(epochs):
     indices = np.random.permutation(len(x_train))
@@ -39,5 +39,5 @@ for i in range(len(x_test)):
     predictions.append(prediction)
 accuracy=accuracy_score(y_test,predictions)
 print(f"Accuracy: {accuracy*100}")
-with open("trained_network2.pkl", "wb") as f:
+with open("trained_network1.pkl", "wb") as f:
     pickle.dump(network, f)
